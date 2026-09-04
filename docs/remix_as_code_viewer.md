@@ -15,9 +15,9 @@ A typical Etherscan URL for a contract address looks like this:
 
 `https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7`
 
-In the URL, change `etherscan.io` to `remix.ethereum.org`
+In the URL, change `etherscan.io` to `app.remix.live`
 
-`https://remix.ethereum.org/address/0xdac17f958d2ee523a2206206994597c13d831ec7`
+`https://app.remix.live/address/0xdac17f958d2ee523a2206206994597c13d831ec7`
 
 and reload. It will fetch the contracts verified on Etherscan.
 
@@ -33,9 +33,9 @@ Solidity files in GitHub can be loaded on Remix with a similar tweak. For a file
 
 `https://github.com/remix-project-org/remix-project/blob/master/apps/remix-ide/contracts/app/solidity/mode.sol`
 
-change `github.com` to `remix.ethereum.org` like:
+change `github.com` to `app.remix.live` like:
 
-`https://remix.ethereum.org/ethereum/remix-project/blob/master/apps/remix-ide/contracts/app/solidity/mode.sol`
+`https://app.remix.live/ethereum/remix-project/blob/master/apps/remix-ide/contracts/app/solidity/mode.sol`
 
 and reload. It will open the same file in Remix IDE.
 

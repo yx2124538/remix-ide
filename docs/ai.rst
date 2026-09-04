@@ -10,7 +10,7 @@ Remix has its own AI tool named **RemixAI Assistant**, which appears in the Righ
 Access to RemixAI varies by your Remix plan:
 
 - **Free Plan**: This provides access to Basic AI Skills and the QuickDApp Front-end Generator (excluding hosting), with AI model consumption billed on usage-based pricing.
-- **Starter & Pro Plans**: Subscribing to our `Starter or Pro plans <https://remix.ethereum.org/?call=planManager//open//plans>`_ unlocks more AI capabilities and includes an initial gift of RemixAI credits.
+- **Starter & Pro Plans**: Subscribing to our `Starter or Pro plans <https://app.remix.live/?call=planManager//open//plans>`_ unlocks more AI capabilities and includes an initial gift of RemixAI credits.
 
 Users of all levels can either buy credits or can `connect their own API keys from supported providers <provide your own API key_>`_ to utilize tokens from their personal accounts rather than Remix credits.
 
@@ -121,18 +121,18 @@ You can check if Remix is on your Ollama allowlist by running the command below:
 .. code-block:: shell
 
    curl -X OPTIONS http://localhost:11434 \
-   -H "Origin: https://remix.ethereum.org" \
+   -H "Origin: https://app.remix.live" \
    -H "Access-Control-Request-Method: GET" \
    -I
 
-If "remix.ethereum.org" is configured properly, you will get the message below:
+If "app.remix.live" is configured properly, you will get the message below:
 
 .. code-block:: shell
 
    HTTP/1.1 204 No Content
    Access-Control-Allow-Headers: Authorization, Content-Type, User-Agent, Accept, X-Requested-With, Openai-Beta, X-Stainless-Arch, X-Stainless-Async, X-Stainless-Custom-Poll-Interval, X-Stainless-Helper-Method, X-Stainless-Lang, X-Stainless-Os, X-Stainless-Package-Version, X-Stainless-Poll-Helper, X-Stainless-Retry-Count, X-Stainless-Runtime, X-Stainless-Runtime-Version, X-Stainless-Timeout
    Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
-   Access-Control-Allow-Origin: https://remix.ethereum.org
+   Access-Control-Allow-Origin: https://app.remix.live
    Access-Control-Max-Age: 43200
    Allow: HEAD, GET
    Vary: Origin

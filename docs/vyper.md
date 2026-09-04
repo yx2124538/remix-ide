@@ -15,7 +15,7 @@ The plugin can be activated by going to:
 
 1. the Plugin Manager and clicking on the Vyper compiler's activate button.
 2. the File Explorer, then by right-clicking on a .vy file and selecting compile in the pop-up menu.
-3. https://remix.ethereum.org/#activate=vyper
+3. https://app.remix.live/#activate=vyper
 
 ## Compiling a Vyper file
 

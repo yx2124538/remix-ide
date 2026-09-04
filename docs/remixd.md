@@ -69,7 +69,7 @@ npm install -g @remix-project/remixd
 
 ### Remixd command
 
-The `remixd` command without options uses the terminal's current directory as the shared directory and the shared Remix domain will be `https://remix.ethereum.org`, `https://remix-alpha.ethereum.org`, or `https://remix-beta.ethereum.org`
+The `remixd` command without options uses the terminal's current directory as the shared directory and the shared Remix domain will be `https://app.remix.live`, `https://remix-alpha.ethereum.org`, or `https://remix-beta.ethereum.org`
 
 The `remixd` command is:<br>
 `remixd`
@@ -102,10 +102,10 @@ Example:
 
 #### HTTP vs HTTPS in the `remixd` command
 
-If your browser is on `https://remix.ethereum.org` (**secure http**) then use HTTPS in the command:
+If your browser is on `https://app.remix.live` (**secure http**) then use HTTPS in the command:
 
 ```shell
-remixd -s <absolute-path-to-the-shared-folder> --remix-ide https://remix.ethereum.org
+remixd -s <absolute-path-to-the-shared-folder> --remix-ide https://app.remix.live
 ```
 
 Or if you are using **http** in the browser, then use **http** in the `remixd` command.
@@ -140,7 +140,7 @@ Alternatively, there is an option to run `remixd` in read-only mode, use `--read
 ```
 
 ```text
-  https://remix.ethereum.org
+  https://app.remix.live
   https://remix-alpha.ethereum.org
   https://remix-beta.ethereum.org
   package://a7df6d3c223593f3550b35e90d7b0b1f.mod
