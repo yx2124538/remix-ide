@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "Overview of the Remix x402 MCP Server, which exposes Remix's Solidity compiler, Slither analysis, and contract deployment as pay-per-call tools priced in USDC."
-    "keywords": "x402, mcp server, remix ide, usdc, base, x402 bazaar, agent payments"
+    "description": "Overview of the Remix x402 MCP Server, which exposes Remix's Solidity compiler, Slither analysis, contract deployment, and AI security auditing as pay-per-call services priced in USDC."
+    "keywords": "x402, mcp server, remix ide, usdc, base, x402 bazaar, agent payments, ai audit"
 ---
 
 # The Remix x402 MCP Server
 
-The Remix x402 MCP Server exposes Remix's Solidity compiler, Slither analysis, and contract deployment as tools that are paid for per call in USDC. It is aimed at AI agents, and at anything else that can pay per call over MCP or plain HTTP.
+The Remix x402 MCP Server exposes Remix's Solidity compiler, Slither analysis, contract deployment, and AI security auditing as services that are paid for per call in USDC. It is aimed at AI agents, and at anything else that can pay per call over MCP or plain HTTP.
 
 The server is indexed on the [x402 Bazaar](https://agentic.market/services/api-remix-live) with full metadata, so agents can discover the tools rather than being configured with them.
 
@@ -22,20 +22,24 @@ There are two ways to use Remix x402. The first is through any MCP client that c
 | `compile_and_deploy`               | Compiles and deploys to one network                               | (Gas cost × 1.3) + 0.05 USDC                     |
 | `compile_and_deploy_multi_network` | Compiles once, deploys to several networks                        | (Total gas × 1.3) + 0.05 USDC, plus a 10% buffer |
 
+Two further services, `get_audit_checklist` and `do_audit`, run an AI security audit. They are available over HTTP only, and are covered on the {doc}`AI audit </x402/audit>` page.
+
 Each tool has its own page in this section, with full parameter and response reference.
 
 ## HTTP endpoints
 
-Compilation and analysis are also reachable as REST endpoints, under `https://api.remix.live/mcp/x402-http/`:
+Compilation, analysis, and the AI audit services are also reachable as REST endpoints, under `https://api.remix.live/mcp/x402-http/`:
 
-| Method | Endpoint   | Price     |
-| ------ | ---------- | --------- |
-| POST   | `/compile` | 0.01 USDC |
-| POST   | `/analyze` | 0.02 USDC |
-| GET    | `/info`    | Free      |
-| GET    | `/health`  | Free      |
+| Method | Endpoint                | Price     |
+| ------ | ----------------------- | --------- |
+| POST   | `/compile`              | 0.01 USDC |
+| POST   | `/analyze`              | 0.02 USDC |
+| POST   | `/get_audit_checklist`  | 0.05 USDC |
+| POST   | `/do_audit`             | 0.10 USDC |
+| GET    | `/info`                 | Free      |
+| GET    | `/health`               | Free      |
 
-The deployment tools are MCP-only. `/info` reports the server's name, version, endpoints and prices, and the network it settles on, which makes it a quick way to confirm what you are talking to:
+The split runs both ways: the deployment tools are MCP-only, and the two audit endpoints are HTTP-only. `/info` reports the server's name, version, endpoints and prices, and the network it settles on, which makes it a quick way to confirm what you are talking to:
 
 ```bash
 curl https://api.remix.live/mcp/x402-http/info
@@ -70,7 +74,7 @@ If your balance does not cover a call, it is rejected before any work is done:
 ## Best practices
 
 1. Test compilation before you deploy.
-2. Run a Slither analysis before deploying, to catch security issues early.
+2. Run a Slither analysis before deploying, to catch security issues early, and an AI audit when you want a written review alongside it.
 3. Start with small contracts, to get a feel for the costs.
 4. Use the optimizer for production deployments, to reduce gas costs.
 5. Check constructor arguments carefully before deploying.

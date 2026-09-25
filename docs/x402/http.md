@@ -2,12 +2,12 @@
 myst:
   html_meta:
     "description": "Call the Remix x402 HTTP endpoints directly with the x402 payment protocol, using @x402/fetch for automatic payment or handling the 402 flow yourself."
-    "keywords": "x402 http, x402 fetch, eip-3009, facilitator, cdp facilitator, usdc, base sepolia, remix ide"
+    "keywords": "x402 http, x402 fetch, eip-3009, facilitator, cdp facilitator, usdc, base sepolia, ai audit, remix ide"
 ---
 
 # Using the HTTP Endpoints
 
-Alongside the MCP tools, Remix's compilation and analysis services are available as plain REST endpoints that implement the x402 payment protocol. Use these when you are integrating from your own code rather than through an AI agent.
+Alongside the MCP tools, Remix's compilation, analysis, and AI audit services are available as plain REST endpoints that implement the x402 payment protocol. Use these when you are integrating from your own code rather than through an AI agent. The two audit endpoints are available here only, and have no MCP equivalent.
 
 Payment settlement runs through a facilitator service, which means you pay no gas for the payment: you sign an authorization rather than sending a transaction, and the facilitator pays the fee to settle it on chain. You pay the quoted service fee and nothing more.
 
@@ -17,8 +17,12 @@ Payment settlement runs through a facilitator service, which means you pay no ga
 |--------|----------|-------|
 | POST | `/compile` | 0.01 USDC |
 | POST | `/analyze` | 0.02 USDC |
+| POST | `/get_audit_checklist` | 0.05 USDC |
+| POST | `/do_audit` | 0.10 USDC |
 | GET | `/info` | Free |
 | GET | `/health` | Free |
+
+The two audit endpoints run an AI security review of your sources and are covered on the {doc}`AI audit </x402/audit>` page.
 
 The hosted service is at `https://api.remix.live/mcp/x402-http/`, so the compile endpoint is `https://api.remix.live/mcp/x402-http/compile`.
 
