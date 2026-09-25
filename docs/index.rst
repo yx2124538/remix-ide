@@ -165,6 +165,7 @@ Useful Links
    x402/compile
    x402/compile-and-deploy
    x402/analyze
+   x402/audit
    x402/http
 
 .. toctree::

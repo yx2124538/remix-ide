@@ -120,6 +120,10 @@ Sessions stay active across Claude sessions. When one expires you are prompted t
 
 Claude discovers the Remix services through the Bazaar, so you can ask for what you want in plain language rather than naming an endpoint.
 
+```{note}
+Compilation, Slither analysis, and the deployment tools are MCP tools, so Claude can call them directly. The {doc}`AI audit services </x402/audit>` are not MCP tools. They are published to the Bazaar with their input schemas, so Claude can still find them and describe them, but running one means a paid HTTP request rather than a tool call.
+```
+
 ### Compiling a contract
 
 Compilation costs 0.01 USDC per call.
